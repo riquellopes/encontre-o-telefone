@@ -126,3 +126,17 @@ describe("Para o numero 9", function(){
 	});
 
 });
+
+describe("Nao associados", function(){
+	it("numero 1 retorna '1'", function(){
+		expect(EncontreONumero(1)).toEqual(1);
+	});
+
+	it("simbolo retorna '-'", function(){
+		expect(EncontreONumero('-')).toEqual('-');
+	});
+
+	it("numero 0 retorna '0'", function(){
+		expect(EncontreONumero(0)).toEqual(0);
+	});
+});

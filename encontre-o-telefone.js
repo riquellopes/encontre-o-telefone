@@ -1,25 +1,27 @@
 function EncontreONumero(letra)
 {
-	if(letra == 'D' || letra == 'E' || letra == 'F')
+	if(/[a,b,c]/ig.test(letra))
+		return 2;
+
+	if(/[d,e,f]/ig.test(letra))
 		return 3;
 
-	if(letra== 'G' || letra=='H' || letra == 'I')
+	if(/[g,h,i]/ig.test(letra))
 		return 4;
 
-	if(letra== 'J' || letra=='K' || letra == 'L')
+	if(/[j,k,l]/ig.test(letra))
 		return 5;
 
-	if(letra== 'M' || letra=='N' || letra == 'O')
+	if(/[m,n,o]/ig.test(letra))
 		return 6;
 
-	if(letra== 'P' || letra=='Q' || letra == 'R' || letra == 'S')
+	if(/[p,q,r,s]/ig.test(letra))
 		return 7;
 
-	if(letra== 'T' || letra=='U' || letra == 'V')
+	if(/[t,u,v]/ig.test(letra))
 		return 8;
 
-	if(letra== 'W' || letra=='X' || letra == 'Y' || letra == 'Z')
+	if(/[w,x,y,z]/ig.test(letra))
 		return 9;
-
-	return 2;
+	return letra;
 }
