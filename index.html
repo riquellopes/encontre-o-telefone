@@ -1,10 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<title>Encontre um telefone::</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="encontre-o-telefone.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(":button").click(function(){
+				$('#num-phone').show();
+				$('#num-phone > span').text( EncontreONumero( $("#alph-phone").val().trim() ) ).show();
+			});
+		});
+	</script>
 </head>
 
 <body>
-	<input type='text' id='alph-phone'/>
-	<div id='num-phone'></div>
+	<input type='text' id='alph-phone' /><input type='button' value='discar'/>
+	<div id='num-phone' style='display:none;'><b>Número:</b> <span></span></div>
 </body>
 </html>
