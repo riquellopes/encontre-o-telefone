@@ -1,27 +1,34 @@
 function EncontreONumero(letra)
 {
-	if(/[a,b,c]/ig.test(letra))
-		return 2;
+	var querty = {
+		  'a,b,c':2,
+		  'd,e,f':3,
+		  'g,h,i':4,
+		  'j,k,l':5,
+		  'm,n,o':6,
+		  'p,q,r,s':7,
+		  't,u,v':8,
+		  'w,x,y,z':9,
+		  '1':1,
+		  '0':0,
+		  '-':'-'
+		},
+		letra = (letra).toString();
+		digi = new Array();
 
-	if(/[d,e,f]/ig.test(letra))
-		return 3;
 
-	if(/[g,h,i]/ig.test(letra))
-		return 4;
+	for(j=0; j<letra.length; j++)
+	{
+		for( q in querty )
+		{
+			var reg = new RegExp("[".concat(q).concat("]"), 'ig');
 
-	if(/[j,k,l]/ig.test(letra))
-		return 5;
+				if( reg.test( letra[j] ) )
+					digi.push(querty[q]);
+		} //for
 
-	if(/[m,n,o]/ig.test(letra))
-		return 6;
+	}//for
 
-	if(/[p,q,r,s]/ig.test(letra))
-		return 7;
-
-	if(/[t,u,v]/ig.test(letra))
-		return 8;
-
-	if(/[w,x,y,z]/ig.test(letra))
-		return 9;
-	return letra;
+	return digi.join("");
+	
 }
