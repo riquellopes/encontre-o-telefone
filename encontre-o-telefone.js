@@ -1,6 +1,6 @@
-function EncontreONumero(letra)
+function EncontreONumero(letter)
 {
-	var querty = {
+	var keyboard = {
 		  'a,b,c':2,
 		  'd,e,f':3,
 		  'g,h,i':4,
@@ -13,22 +13,22 @@ function EncontreONumero(letra)
 		  '0':0,
 		  '-':'-'
 		},
-		letra = (letra).toString();
-		digi = new Array();
+		letter = (letter).toString();
+		digit = new Array();
 
 
-	for(j=0; j<letra.length; j++)
+	for(j=0; j<letter.length; j++)
 	{
-		for( q in querty )
+		for( k in keyboard )
 		{
-			var reg = new RegExp("[".concat(q).concat("]"), 'ig');
+			var reg = new RegExp("[".concat(k).concat("]"), 'ig');
 
-				if( reg.test( letra[j] ) )
-					digi.push(querty[q]);
+				if( reg.test( letter[j] ) )
+					digit.push(keyboard[k]);
 		} //for
 
 	}//for
 
-	return digi.join("");
-	
+	return digit.join("");
+
 }
